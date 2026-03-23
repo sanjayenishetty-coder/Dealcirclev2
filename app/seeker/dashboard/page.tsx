@@ -207,8 +207,8 @@ export default function SeekerDashboard() {
       {/* Support */}
       <p className="text-sm text-dc-text-muted mt-8 text-center">
         Questions? Reach us at{" "}
-        <a href="mailto:deals@dealcircle.in" className="text-dc-gold hover:text-dc-gold-hover">
-          deals@dealcircle.in
+        <a href="mailto:deals@smelogin.com" className="text-dc-gold hover:text-dc-gold-hover">
+          deals@smelogin.com
         </a>
       </p>
     </div>

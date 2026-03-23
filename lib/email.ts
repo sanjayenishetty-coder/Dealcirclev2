@@ -2,8 +2,8 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const FROM_EMAIL = 'DealCircle <onboarding@resend.dev>';
-const ADMIN_EMAIL = 'admin@dealcircle.in';
+const FROM_EMAIL = 'SMELogin <onboarding@resend.dev>';
+const ADMIN_EMAIL = 'admin@smelogin.com';
 
 // ─── Email Templates ────────────────────────────────────────────────
 
@@ -40,12 +40,12 @@ function baseTemplate(content: string) {
   <div style="padding: 20px; background-color: #0A0F1E;">
     <div class="container">
       <div class="header">
-        <h1>Deal Circle</h1>
+        <h1>SMELogin</h1>
       </div>
       ${content}
       <div class="footer">
-        <p>&copy; ${new Date().getFullYear()} Deal Circle. All rights reserved.</p>
-        <p style="margin-top: 8px;">Questions? Reach us at deals@dealcircle.in</p>
+        <p>&copy; ${new Date().getFullYear()} SMELogin. All rights reserved.</p>
+        <p style="margin-top: 8px;">Questions? Reach us at deals@smelogin.com</p>
       </div>
     </div>
   </div>
@@ -59,20 +59,20 @@ export async function sendSeekerApprovedEmail(to: string, name: string) {
   const html = baseTemplate(`
     <div class="body">
       <h2>Welcome aboard, ${name}! 🎉</h2>
-      <p>Great news — your seeker profile on Deal Circle has been <span class="badge badge-green">Approved</span>.</p>
+      <p>Great news — your seeker profile on SMELogin has been <span class="badge badge-green">Approved</span>.</p>
       <p>You can now log in to your dashboard and submit your deal for review.</p>
       <div class="info-card">
         <p style="color: #F1F5F9; margin: 0;">Next steps:</p>
         <p style="margin-top: 8px;">1. Log in to your dashboard<br>2. Click "Submit Your Deal"<br>3. Complete the 4-step intake wizard<br>4. Our team will review and publish your deal</p>
       </div>
-      <a href="${process.env.NEXT_PUBLIC_SUPABASE_URL ? 'https://dealcircle.in' : 'http://localhost:3000'}/seeker/dashboard" class="cta-btn">Go to Dashboard →</a>
+      <a href="${process.env.NEXT_PUBLIC_SUPABASE_URL ? 'https://smelogin.com' : 'http://localhost:3000'}/seeker/dashboard" class="cta-btn">Go to Dashboard →</a>
     </div>
   `);
 
   return resend.emails.send({
     from: FROM_EMAIL,
     to,
-    subject: 'Your Deal Circle Profile is Approved ✓',
+    subject: 'Your SMELogin Profile is Approved ✓',
     html,
   });
 }
@@ -81,20 +81,20 @@ export async function sendSeekerRejectedEmail(to: string, name: string, reason: 
   const html = baseTemplate(`
     <div class="body">
       <h2>Profile Update</h2>
-      <p>Hi ${name}, we've reviewed your seeker application on Deal Circle.</p>
+      <p>Hi ${name}, we've reviewed your seeker application on SMELogin.</p>
       <p>Unfortunately, we're unable to approve your profile at this time.</p>
       <div class="info-card">
         <p style="color: #94A3B8; margin: 0; font-size: 13px;">Reason:</p>
         <p style="color: #F1F5F9; margin: 8px 0 0 0;">${reason}</p>
       </div>
-      <p>If you believe this was an error or have additional information, please reach out to us at deals@dealcircle.in.</p>
+      <p>If you believe this was an error or have additional information, please reach out to us at deals@smelogin.com.</p>
     </div>
   `);
 
   return resend.emails.send({
     from: FROM_EMAIL,
     to,
-    subject: 'Deal Circle — Profile Review Update',
+    subject: 'SMELogin — Profile Review Update',
     html,
   });
 }
@@ -102,21 +102,21 @@ export async function sendSeekerRejectedEmail(to: string, name: string, reason: 
 export async function sendInvestorApprovedEmail(to: string, name: string) {
   const html = baseTemplate(`
     <div class="body">
-      <h2>Welcome to Deal Circle, ${name}! 🎉</h2>
+      <h2>Welcome to SMELogin, ${name}! 🎉</h2>
       <p>Your investor profile has been <span class="badge badge-green">Approved</span>.</p>
       <p>You now have full access to our curated deal marketplace featuring startup funding, SME investments, and debt opportunities.</p>
       <div class="info-card">
         <p style="color: #F1F5F9; margin: 0;">What you can do now:</p>
         <p style="margin-top: 8px;">• Browse curated deals across 3 categories<br>• Express interest on deals that match your profile<br>• Save deals to your watchlist<br>• Our team will connect you with deal seekers</p>
       </div>
-      <a href="${process.env.NEXT_PUBLIC_SUPABASE_URL ? 'https://dealcircle.in' : 'http://localhost:3000'}/investor/deals" class="cta-btn">Browse Deals →</a>
+      <a href="${process.env.NEXT_PUBLIC_SUPABASE_URL ? 'https://smelogin.com' : 'http://localhost:3000'}/investor/deals" class="cta-btn">Browse Deals →</a>
     </div>
   `);
 
   return resend.emails.send({
     from: FROM_EMAIL,
     to,
-    subject: 'Welcome to Deal Circle — Start Browsing Deals',
+    subject: 'Welcome to SMELogin — Start Browsing Deals',
     html,
   });
 }
@@ -125,20 +125,20 @@ export async function sendInvestorRejectedEmail(to: string, name: string, reason
   const html = baseTemplate(`
     <div class="body">
       <h2>Profile Update</h2>
-      <p>Hi ${name}, we've reviewed your investor application on Deal Circle.</p>
+      <p>Hi ${name}, we've reviewed your investor application on SMELogin.</p>
       <p>Unfortunately, we're unable to approve your profile at this time.</p>
       <div class="info-card">
         <p style="color: #94A3B8; margin: 0; font-size: 13px;">Reason:</p>
         <p style="color: #F1F5F9; margin: 8px 0 0 0;">${reason}</p>
       </div>
-      <p>If you have questions, reach out to us at deals@dealcircle.in.</p>
+      <p>If you have questions, reach out to us at deals@smelogin.com.</p>
     </div>
   `);
 
   return resend.emails.send({
     from: FROM_EMAIL,
     to,
-    subject: 'Deal Circle — Profile Review Update',
+    subject: 'SMELogin — Profile Review Update',
     html,
   });
 }
@@ -178,7 +178,7 @@ export async function sendInterestNotificationToAdmin(
           </tr>
         </table>
       </div>
-      <a href="${process.env.NEXT_PUBLIC_SUPABASE_URL ? 'https://dealcircle.in' : 'http://localhost:3000'}/admin" class="cta-btn">View in Admin Panel →</a>
+      <a href="${process.env.NEXT_PUBLIC_SUPABASE_URL ? 'https://smelogin.com' : 'http://localhost:3000'}/admin" class="cta-btn">View in Admin Panel →</a>
     </div>
   `);
 
@@ -213,7 +213,7 @@ export async function sendDealPublishedToInvestors(
   const html = baseTemplate(`
     <div class="body">
       <h2>New Deal Alert 🚀</h2>
-      <p>A new deal matching your interests is now live on Deal Circle.</p>
+      <p>A new deal matching your interests is now live on SMELogin.</p>
       <div class="info-card">
         <div style="margin-bottom: 12px;">
           <span style="display: inline-block; padding: 4px 12px; border-radius: 9999px; font-size: 12px; font-weight: 600; background-color: ${color}33; color: ${color};">${label}</span>
@@ -221,7 +221,7 @@ export async function sendDealPublishedToInvestors(
         <p style="color: #F1F5F9; font-size: 16px; font-weight: 600; margin: 0 0 8px 0;">${dealTitle}</p>
         <p style="color: #94A3B8; font-size: 13px; margin: 0;">📍 ${dealCity}</p>
       </div>
-      <a href="${process.env.NEXT_PUBLIC_SUPABASE_URL ? 'https://dealcircle.in' : 'http://localhost:3000'}/investor/deals/${dealId}" class="cta-btn">View Deal →</a>
+      <a href="${process.env.NEXT_PUBLIC_SUPABASE_URL ? 'https://smelogin.com' : 'http://localhost:3000'}/investor/deals/${dealId}" class="cta-btn">View Deal →</a>
     </div>
   `);
 
@@ -276,7 +276,7 @@ export async function sendNewSeekerSubmissionToAdmin(
           </tr>
         </table>
       </div>
-      <a href="${process.env.NEXT_PUBLIC_SUPABASE_URL ? 'https://dealcircle.in' : 'http://localhost:3000'}/admin/seekers" class="cta-btn">Review Submission →</a>
+      <a href="${process.env.NEXT_PUBLIC_SUPABASE_URL ? 'https://smelogin.com' : 'http://localhost:3000'}/admin/seekers" class="cta-btn">Review Submission →</a>
     </div>
   `);
 
@@ -292,19 +292,19 @@ export async function sendWelcomeEmail(to: string, name: string, role: 'seeker' 
   const html = baseTemplate(`
     <div class="body">
       <h2>Thanks for registering, ${name}!</h2>
-      <p>We've received your ${role === 'seeker' ? 'deal seeker' : 'investor'} application on Deal Circle.</p>
+      <p>We've received your ${role === 'seeker' ? 'deal seeker' : 'investor'} application on SMELogin.</p>
       <div class="info-card">
         <p style="color: #F1F5F9; margin: 0;">⏳ What happens next?</p>
         <p style="margin-top: 8px;">Our team will review your profile within 24–48 hours. You'll receive an email once your profile is approved.</p>
       </div>
-      <p>In the meantime, if you have questions, reach out to us at deals@dealcircle.in.</p>
+      <p>In the meantime, if you have questions, reach out to us at deals@smelogin.com.</p>
     </div>
   `);
 
   return resend.emails.send({
     from: FROM_EMAIL,
     to,
-    subject: 'Deal Circle — Registration Received',
+    subject: 'SMELogin — Registration Received',
     html,
   });
 }

@@ -43,7 +43,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
     <div className="flex flex-col h-full bg-dc-bg border-r border-dc-border w-64">
       <div className="p-6">
         <h1 className="text-xl font-display text-dc-text-primary">
-          DealCircle
+          SMELogin
         </h1>
         <p className="text-xs text-dc-text-muted mt-1">Admin Panel</p>
       </div>
@@ -112,7 +112,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
           <button onClick={() => setSidebarOpen(true)} className="text-dc-text-primary">
             <Menu size={24} />
           </button>
-          <h1 className="text-lg font-display text-dc-text-primary">DealCircle</h1>
+          <h1 className="text-lg font-display text-dc-text-primary">SMELogin</h1>
           <div className="w-6" />
         </div>
 

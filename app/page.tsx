@@ -55,7 +55,7 @@ export default function LandingPage() {
       {/* Nav */}
       <header className="border-b border-dc-border">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-xl font-display text-dc-text-primary">DealCircle</h1>
+          <h1 className="text-xl font-display text-dc-text-primary">SMELogin</h1>
           <div className="flex items-center gap-3">
             <Link
               href="/auth/login"
@@ -159,7 +159,7 @@ export default function LandingPage() {
       <footer className="border-t border-dc-border">
         <div className="max-w-6xl mx-auto px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <h4 className="text-lg font-display text-dc-text-primary">DealCircle</h4>
+            <h4 className="text-lg font-display text-dc-text-primary">SMELogin</h4>
             <p className="text-xs text-dc-text-muted mt-1">Curated investment deals</p>
           </div>
           <div className="flex items-center gap-6">
@@ -169,7 +169,7 @@ export default function LandingPage() {
             <Link href="/auth/register?role=investor" className="text-sm text-dc-text-secondary hover:text-dc-gold">
               Join as Investor
             </Link>
-            <a href="mailto:deals@dealcircle.in" className="text-sm text-dc-text-secondary hover:text-dc-gold">
+            <a href="mailto:deals@smelogin.com" className="text-sm text-dc-text-secondary hover:text-dc-gold">
               Contact
             </a>
           </div>

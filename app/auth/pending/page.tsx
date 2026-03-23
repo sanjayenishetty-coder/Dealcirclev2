@@ -61,7 +61,7 @@ export default function PendingPage() {
                 </div>
               )}
               <p className="text-sm text-dc-text-muted">
-                Contact us at deals@dealcircle.in for more information.
+                Contact us at deals@smelogin.com for more information.
               </p>
             </>
           ) : (
@@ -74,7 +74,7 @@ export default function PendingPage() {
                 Your application is under review. Our team will reach out within 24–48 hours.
               </p>
               <p className="text-sm text-dc-text-muted">
-                Questions? Reach us at deals@dealcircle.in
+                Questions? Reach us at deals@smelogin.com
               </p>
             </>
           )}

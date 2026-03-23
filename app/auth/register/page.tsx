@@ -119,7 +119,7 @@ function RegisterPageInner() {
         <div className="w-full max-w-lg">
           <div className="text-center mb-8">
             <h1 className="text-3xl font-display text-dc-text-primary mb-2">
-              Join DealCircle
+              Join SMELogin
             </h1>
             <p className="text-dc-text-secondary">How would you like to participate?</p>
           </div>

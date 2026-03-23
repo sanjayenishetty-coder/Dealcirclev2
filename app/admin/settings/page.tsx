@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import { Save } from "lucide-react";
 
 export default function AdminSettingsPage() {
-  const [contactEmail, setContactEmail] = useState("deals@dealcircle.in");
+  const [contactEmail, setContactEmail] = useState("deals@smelogin.com");
   const [whatsappNumber, setWhatsappNumber] = useState("+919999999999");
   const [saving, setSaving] = useState(false);
 

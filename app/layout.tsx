@@ -3,7 +3,7 @@ import "./globals.css";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  title: "DealCircle — Curated Investment Deals",
+  title: "SMELogin — Curated Investment Deals",
   description: "Admin-curated investment deal marketplace for startup funding, SME investments, and debt opportunities.",
 };
 

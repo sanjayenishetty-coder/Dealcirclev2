@@ -21,7 +21,7 @@ export default function SeekerShell({ children }: { children: React.ReactNode })
       {/* Sidebar */}
       <aside className="hidden lg:flex flex-col w-64 border-r border-dc-border bg-dc-bg fixed inset-y-0 left-0">
         <div className="p-6">
-          <h1 className="text-xl font-display text-dc-text-primary">DealCircle</h1>
+          <h1 className="text-xl font-display text-dc-text-primary">SMELogin</h1>
           <p className="text-xs text-dc-text-muted mt-1">Seeker Portal</p>
         </div>
 

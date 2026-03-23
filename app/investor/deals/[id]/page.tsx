@@ -246,11 +246,11 @@ export default function DealDetailPage() {
                 WhatsApp
               </a>
               <a
-                href="mailto:deals@dealcircle.in"
+                href="mailto:deals@smelogin.com"
                 className="flex items-center gap-2 text-sm text-dc-text-secondary hover:text-dc-gold transition-colors"
               >
                 <Mail size={14} />
-                deals@dealcircle.in
+                deals@smelogin.com
               </a>
             </div>
           </div>
@@ -263,7 +263,7 @@ export default function DealDetailPage() {
           <DialogHeader>
             <DialogTitle>Express Interest</DialogTitle>
             <DialogDescription className="text-dc-text-secondary">
-              By expressing interest, you agree to the DealCircle team sharing your investor profile with the relevant deal team. This action cannot be undone.
+              By expressing interest, you agree to the SMELogin team sharing your investor profile with the relevant deal team. This action cannot be undone.
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
