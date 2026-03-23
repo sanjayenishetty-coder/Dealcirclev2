@@ -1,100 +1,179 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Rocket, Building2, Landmark, ArrowRight, Shield, Users, Briefcase } from "lucide-react";
 
-export default function Home() {
+const categories = [
+  {
+    icon: Rocket,
+    title: "Startup Funding",
+    description: "Pre-Seed to Series B funding for high-growth technology startups across India.",
+    color: "#3B82F6",
+    bg: "rgba(59, 130, 246, 0.15)",
+  },
+  {
+    icon: Building2,
+    title: "SME Investment",
+    description: "Equity and preference share investments in established SMEs with strong fundamentals.",
+    color: "#6366F1",
+    bg: "rgba(99, 102, 241, 0.15)",
+  },
+  {
+    icon: Landmark,
+    title: "Debt Opportunity",
+    description: "NCDs, term loans, invoice discounting and structured debt with attractive yields.",
+    color: "#F59E0B",
+    bg: "rgba(245, 158, 11, 0.15)",
+  },
+];
+
+const steps = [
+  {
+    step: "01",
+    title: "Submit or Browse",
+    description: "Seekers submit deals for review. Investors browse the curated marketplace.",
+  },
+  {
+    step: "02",
+    title: "Admin Curation",
+    description: "Every deal is reviewed, verified, and published by our team. Quality guaranteed.",
+  },
+  {
+    step: "03",
+    title: "Connect & Close",
+    description: "Express interest and our team facilitates introductions. We handle everything offline.",
+  },
+];
+
+const trustItems = [
+  { icon: Shield, label: "Curated Deals" },
+  { icon: Users, label: "Verified Investors" },
+  { icon: Briefcase, label: "Admin-Mediated" },
+];
+
+export default function LandingPage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-dc-bg">
+      {/* Nav */}
+      <header className="border-b border-dc-border">
+        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+          <h1 className="text-xl font-display text-dc-text-primary">DealCircle</h1>
+          <div className="flex items-center gap-3">
+            <Link
+              href="/auth/login"
+              className="text-sm text-dc-text-secondary hover:text-dc-text-primary transition-colors"
+            >
+              Sign In
+            </Link>
+            <Link
+              href="/auth/register"
+              className="text-sm bg-dc-gold text-dc-bg px-4 py-2 rounded-lg font-medium hover:bg-dc-gold-hover transition-colors"
+            >
+              Get Started
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+
+      {/* Hero */}
+      <section className="max-w-6xl mx-auto px-4 py-20 lg:py-28 text-center">
+        <h2 className="text-4xl lg:text-6xl font-display text-dc-text-primary mb-6 leading-tight">
+          Curated Investment Deals,
+          <br />
+          <span className="text-dc-gold">One Platform.</span>
+        </h2>
+        <p className="text-lg text-dc-text-secondary max-w-2xl mx-auto mb-10">
+          Access verified startup funding, SME investments, and debt opportunities — all reviewed and published by our expert team.
+        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            href="/auth/register?role=seeker"
+            className="inline-flex items-center gap-2 bg-dc-gold text-dc-bg px-6 py-3 rounded-lg font-medium hover:bg-dc-gold-hover transition-colors"
+          >
+            List Your Deal <ArrowRight size={16} />
+          </Link>
+          <Link
+            href="/auth/register?role=investor"
+            className="inline-flex items-center gap-2 border border-dc-gold text-dc-gold px-6 py-3 rounded-lg font-medium hover:bg-dc-gold/10 transition-colors"
+          >
+            Join as Investor <ArrowRight size={16} />
+          </Link>
+        </div>
+      </section>
+
+      {/* How it Works */}
+      <section className="max-w-6xl mx-auto px-4 py-16">
+        <h3 className="text-2xl font-display text-dc-text-primary text-center mb-12">
+          How It Works
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {steps.map((s) => (
+            <div key={s.step} className="text-center">
+              <div className="w-12 h-12 rounded-full bg-dc-gold/20 text-dc-gold font-mono font-bold text-lg flex items-center justify-center mx-auto mb-4">
+                {s.step}
+              </div>
+              <h4 className="text-lg font-semibold text-dc-text-primary mb-2">{s.title}</h4>
+              <p className="text-sm text-dc-text-secondary">{s.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Category Cards */}
+      <section className="max-w-6xl mx-auto px-4 py-16">
+        <h3 className="text-2xl font-display text-dc-text-primary text-center mb-12">
+          Three Deal Categories
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {categories.map((cat) => (
+            <div
+              key={cat.title}
+              className="bg-dc-surface border border-dc-border rounded-xl p-6 hover:border-dc-gold/30 transition-colors"
+            >
+              <div
+                className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                style={{ backgroundColor: cat.bg }}
+              >
+                <cat.icon size={24} style={{ color: cat.color }} />
+              </div>
+              <h4 className="text-lg font-semibold text-dc-text-primary mb-2">{cat.title}</h4>
+              <p className="text-sm text-dc-text-secondary">{cat.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Trust Bar */}
+      <section className="border-t border-dc-border">
+        <div className="max-w-6xl mx-auto px-4 py-12">
+          <div className="flex flex-wrap items-center justify-center gap-12">
+            {trustItems.map((item) => (
+              <div key={item.label} className="flex items-center gap-2 text-dc-text-secondary">
+                <item.icon size={20} className="text-dc-gold" />
+                <span className="text-sm font-medium">{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-dc-border">
+        <div className="max-w-6xl mx-auto px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <h4 className="text-lg font-display text-dc-text-primary">DealCircle</h4>
+            <p className="text-xs text-dc-text-muted mt-1">Curated investment deals</p>
+          </div>
+          <div className="flex items-center gap-6">
+            <Link href="/auth/register?role=seeker" className="text-sm text-dc-text-secondary hover:text-dc-gold">
+              List Your Deal
+            </Link>
+            <Link href="/auth/register?role=investor" className="text-sm text-dc-text-secondary hover:text-dc-gold">
+              Join as Investor
+            </Link>
+            <a href="mailto:deals@dealcircle.in" className="text-sm text-dc-text-secondary hover:text-dc-gold">
+              Contact
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   );
